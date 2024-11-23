@@ -1,10 +1,21 @@
-const NumberOfEvents = () => {
+import { useState } from "react";
+
+const NumberOfEvents = ({ currentNOE, setCurrentNOE }) => {
+    const [NOE, setNOE] = useState(currentNOE ? currentNOE : 32);
+    const handleInputChanged = (event) => {
+        setNOE(event.target.value);
+        if (setCurrentNOE) {
+            setCurrentNOE(event.target.value);
+        }
+    };
     return (
         <div id="number-of-events">
+            <span>Number of Events : </span>
             <input
                 type="text"
                 className="numberOfEvents"
-                placeholder="Search for a city"
+                value={NOE}
+                onChange={handleInputChanged}
             />
         </div>
     );
