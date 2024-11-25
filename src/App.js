@@ -32,7 +32,7 @@ const App = () => {
     }
     setWarningAlert(warningText);
     fetchData();
-  }, [currentCity, currentNOE, errorAlert, navigator.onLine]);
+  }, [currentCity, currentNOE, errorAlert]);
 
   const fetchData = async () => {
     const allEvents = await getEvents();
