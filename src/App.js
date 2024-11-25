@@ -32,7 +32,7 @@ const App = () => {
       warningText = "Your are offline. The displayed list has been loaded from the cache";
     }
     setWarningAlert(warningText);
-  }, [currentCity, currentNOE, errorAlert]);
+  }, [currentCity, currentNOE, errorAlert, navigator.onLine]);
 
   const fetchData = async () => {
     const allEvents = await getEvents();
