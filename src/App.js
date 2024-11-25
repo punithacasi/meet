@@ -17,7 +17,6 @@ const App = () => {
   const [warningAlert, setWarningAlert] = useState("");
 
   useEffect(() => {
-    fetchData();
     let errorText;
     if (isNaN(currentNOE)) {
       errorText = "Please enter a valid number to see the events"
@@ -32,6 +31,7 @@ const App = () => {
       warningText = "Your are offline. The displayed list has been loaded from the cache";
     }
     setWarningAlert(warningText);
+    fetchData();
   }, [currentCity, currentNOE, errorAlert, navigator.onLine]);
 
   const fetchData = async () => {
